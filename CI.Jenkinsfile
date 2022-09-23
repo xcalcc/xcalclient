@@ -10,10 +10,10 @@ pipeline {
         WORKDIR=pwd()
 
         XCALCLIENT_BUILD_DOCKER_IMG="hub.xcalibyte.co/sdlc/xcalclientbuilder:latest"
-        XCALCLIENT_URL="http://git.xc5.io/git/xc5-sz/xcalclient.git"
-        XCALBUILD_NEXUS_REPO_ADDRESS="${XCALBUILD_NEXUS_REPO_ADDRESS ? XCALBUILD_NEXUS_REPO_ADDRESS : 'http://10.10.4.154:8081/service/rest/v1/search/assets/download?sort=version&repository=xcalbuild'}"
-        XCALCLIENT_NEXUS_REPO_ADDRESS="${XCALCLIENT_NEXUS_REPO_ADDRESS ? XCALCLIENT_NEXUS_REPO_ADDRESS : 'http://10.10.4.154:8081/repository/xcalclient/'}"
-        XCALCLIENT_NEXUS_REPO_ADDRESS2="${XCALCLIENT_NEXUS_REPO_ADDRESS2 ? XCALCLIENT_NEXUS_REPO_ADDRESS2 : 'http://10.10.2.141:8081/repository/xcalclient/'}"
+        XCALCLIENT_URL="https://github.com/xcalcc/xcalclient.git"
+        XCALBUILD_NEXUS_REPO_ADDRESS="${XCALBUILD_NEXUS_REPO_ADDRESS ? XCALBUILD_NEXUS_REPO_ADDRESS : 'http://127.0.0.1:8081/service/rest/v1/search/assets/download?sort=version&repository=xcalbuild'}"
+        XCALCLIENT_NEXUS_REPO_ADDRESS="${XCALCLIENT_NEXUS_REPO_ADDRESS ? XCALCLIENT_NEXUS_REPO_ADDRESS : 'http://127.0.0.1:8081/repository/xcalclient/'}"
+        XCALCLIENT_NEXUS_REPO_ADDRESS2="${XCALCLIENT_NEXUS_REPO_ADDRESS2 ? XCALCLIENT_NEXUS_REPO_ADDRESS2 : 'http://127.0.0.1:8081/repository/xcalclient/'}"
 
         DATETIME = sh(returnStdout: true, script: 'date +%Y-%m-%d').trim()
 
