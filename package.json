@@ -1,0 +1,50 @@
+{
+    "name": "client",
+    "description": "A new client to start a preprocess pipe in command line",
+    "version": "2.1.5",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --coverage --verbose",
+        "start": "node index.js",
+        "update-ver": "node scripts/versioning.js --write-back-to-package-json",
+        "help": "node index.js --help --dev",
+        "run-test": "node index.js -u \"xx\" --psw \"xx\" -s \"$HOME/projects/scan-source/basic\" --locale cn",
+        "cancel-test": "node index.js -h \"http://xxx.xx.xx\" -p 80 -u \"xx\" --psw \"xx\" -s \"$HOME/projects/scan-source/basic\" --cancel",
+        "migrate-config": "node ./scripts/migrateConfig/index.js --config-path \"$HOME/configs\" -h \"http://xxx.xx.xx\" -p 80 -u \"xx\" --psw \"xx\"",
+        "buildFlowPolicy": "node -e \"require('./build/nexe-build.js').buildUserPolicies()\"",
+        "build-client-static": "node -e \"require('./build/nexe-build.js').compileClient()\"",
+        "build-client-mac": "node -e \"require('./build/nexe-build.js').compileClientMac()\"",
+        "nexe": "yarn buildFlowPolicy && yarn build-client-static",
+        "nexe-mac": "yarn buildFlowPolicy && yarn build-client-mac",
+        "export-policy": "node -e \"require('./policy').exportPolicy()\"",
+        "build": "bash -x ./build/build-client.sh",
+        "build-mac": "bash -x ./build/build-client.sh mac"
+    },
+    "keywords": [
+        "preprocess"
+    ],
+    "author": "jack.xie@xcalibyte.com",
+    "license": "ISC",
+    "dependencies": {
+        "archiver": "^5.3.0",
+        "axios": "^0.21.1",
+        "child_process": "^1.0.2",
+        "configparser": "^0.3.9",
+        "dotenv": "^10.0.0",
+        "fs-extra": "^9.1.0",
+        "glob": "^7.1.7",
+        "jsonschema": "^1.4.0",
+        "minimist": "^1.2.5",
+        "moment": "^2.29.1",
+        "nanoid": "^3.1.23",
+        "node-os-utils": "^1.3.5",
+        "pretty-bytes": "^5.6.0",
+        "xcallogger-node": "git+http://git@10.10.4.152:8282/xcallogger#dev"
+    },
+    "devDependencies": {
+        "convert-excel-to-json": "^1.7.0",
+        "jest": "^27.0.4",
+        "nexe": "^4.0.0-beta.19",
+        "rewire": "^5.0.0"
+    }
+}

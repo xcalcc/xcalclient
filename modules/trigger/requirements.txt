@@ -1,0 +1,4 @@
+requests==2.18.4
+sseclient_py==1.7.2
+urllib3==1.22
+pycryptodomex==3.4.3

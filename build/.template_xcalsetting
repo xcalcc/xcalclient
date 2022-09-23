@@ -1,0 +1,19 @@
+{
+    "user":""
+,
+    "psw":""
+,
+    "apiServer":""
+,
+    "fileServiceUrl":""
+,
+    "ruleServiceUrl":""
+,
+    "queueTimeout":""
+,
+    "sseServer":""
+,
+    "freshInstall":"true"
+,
+    "_3rdPartyUpdateUrl": ""
+}

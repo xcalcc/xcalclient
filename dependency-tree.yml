@@ -1,0 +1,21 @@
+# dependency tree for client building
+client:
+  version: 2.1.3
+  dependencies:
+    - scm:
+        description: source control manager, includes commit id control and source diff generation
+        minVersion: 2.1.3
+    - build:
+        dependencies:
+          - xcalbuild
+        description: preprocess source code using xcalbuild
+        minVersion: 2.1.3
+    - packager:
+        description: package pre-processing files for server side scan
+        minVersion: 2.1.3
+    - upload:
+        description: source control manager, includes commit id control and source diff generation
+        minVersion: 2.1.3
+    - xcalbuild:
+        description: preprocess source code
+        minVersion: 2.1.3
