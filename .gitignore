@@ -1,0 +1,17 @@
+.idea
+.deployer
+logs
+.env
+/project-configs
+/coverage
+/node_modules
+/executable
+yarn-error.log
+out/
+dist
+*.log
+build-info
+flowPolicy.json
+.xcalsetting
+./pyinstaller/src/build
+.vscode/
