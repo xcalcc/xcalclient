@@ -24,7 +24,6 @@
         "preprocess"
     ],
     "author": "jack.xie@xcalibyte.com",
-    "license": "ISC",
     "dependencies": {
         "archiver": "^5.3.0",
         "axios": "^0.21.1",
