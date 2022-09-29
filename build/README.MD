@@ -56,7 +56,7 @@ The pre-built docker image has already installed all build dependencies.
 ## Jenkins integration ##
 
 ---
-[Internal jenkins](http://10.10.4.153:8088/view/xcalclient/job/xcalclient_dev) has already used the CI.Jenkins file
+[Internal jenkins](http://127.0.0.1:8088/view/xcalclient/job/xcalclient_dev) has already used the CI.Jenkins file
 for pipeline build.
 Some environment parameters:
 - NEXUS_REPO_USER: defined the username to upload artifacts to Nexus server
@@ -90,8 +90,8 @@ $chmod +x -R ${env.WORKSPACE}
   A: Click ```Build with Parameters``` on left manu on job page
 
 > Q: How to find the artifacts?\
-  A: Nexus repo SZ: [http://10.10.2.141:8081/#browse/browse:xcalclient](http://10.10.2.141:8081/#browse/browse:xcalclient),\
-     Nexus repo SH: [http://10.10.4.154:8081/#browse/browse:xcalclient](http://10.10.4.154:8081/#browse/browse:xcalclient)
+  A: Nexus repo SZ: [http://127.0.0.1:8081/#browse/browse:xcalclient](http://127.0.0.1:8081/#browse/browse:xcalclient),\
+     Nexus repo SH: [http://127.0.0.1:8081/#browse/browse:xcalclient](http://127.0.0.1:8081/#browse/browse:xcalclient)
 ## What's in the recipe ##
 ### Pre-downloaded libraries and softwares ###
 

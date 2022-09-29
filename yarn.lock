@@ -5830,9 +5830,9 @@ ws@^7.4.6:
   resolved "https://registry.npmjs.org/ws/-/ws-7.5.3.tgz"
   integrity sha512-kQ/dHIzuLrS6Je9+uv81ueZomEwH0qVYstcAQ4/Z93K8zeko9gtAbttJWzoC5ukqXY1PpoouV3+VSOqEAFt5wg==
 
-"xcallogger-node@git+http://git@10.10.4.152:8282/xcallogger#dev":
+"xcallogger-node@git+https://github.com/xcalcc/xcallogger.git#master":
   version "1.1.0"
-  resolved "git+http://git@10.10.4.152:8282/xcallogger#90fd6b38ec09a2732ad6603d31d3309a4a51e36e"
+  resolved "git+https://github.com/xcalcc/xcallogger.git#master#e81a69faf0cbe78a461c2acc46e2e0dc192ecad8"
   dependencies:
     "@elastic/ecs-winston-format" "^0.3.0"
     "@elastic/elasticsearch" "^7.10.0"
