@@ -32,7 +32,11 @@ else
     mv ./tmp/gather-logs ./dist/gather-logs
 fi
 
+echo "Changing dist folder permissions"
+chmod -R 755 ./dist
+
 echo "......clean up......"
-command rm -rf ./tmp
-command rm -rf ./build
+rm -rf ./tmp
+rm -rf ./build
+rm -rf ./__pycache__
 echo "......Generate static gather-logs Package Finished......"

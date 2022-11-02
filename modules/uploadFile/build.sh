@@ -33,7 +33,11 @@ else
     mv ./tmp/uploadfile ./dist/uploadfile
 fi
 
+echo "Changing dist folder permissions"
+chmod -R 755 ./dist
+
 echo "......Delete scm tmp folder......"
 rm -rf ./tmp
 rm -rf ./build
+rm -rf ./__pycache__
 echo "......Generate static scm Package Finished......"

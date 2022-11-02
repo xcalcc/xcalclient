@@ -32,7 +32,11 @@ else
     mv ./tmp/packager ./dist/packager
 fi
 
+echo "Changing dist folder permissions"
+chmod -R 755 ./dist
+
 echo "......Delete tmp folder......"
 rm -rf ./tmp
 rm -rf ./build
+rm -rf ./__pycache__
 echo "......Generate static packager Package Finished......"

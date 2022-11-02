@@ -11,7 +11,7 @@ PREBUILT_PACKAGE_PATH="${PROJECT_ROOT}/build/mac/prebuilt"
 echo "project root $PROJECT_ROOT"
 start=$(date +%s)
 
-dist="$PROJECT_ROOT/build/dist/"
+dist="$PROJECT_ROOT/build/dist"
 
 # clean up dist
 rm -rf $dist
@@ -125,6 +125,9 @@ copy_files_from_build_results() {
 
     echo "Copying tools gather-logs..."
     cp -f $PYTHON_MODULE_PATH/gatherLogs/dist/gather-logs $dist/tools/gather-logs
+
+    echo "Changing permissions"
+    chmod -R 755 $dist
 }
 
 copy_files_from_prebuilt_for_mac() {
@@ -132,6 +135,7 @@ copy_files_from_prebuilt_for_mac() {
     echo "Copying $PREBUILT_PACKAGE_PATH to $dist"
     cp -r "$PREBUILT_PACKAGE_PATH/executable" $dist/executable
     cp -r "$PREBUILT_PACKAGE_PATH/tools" $dist/tools
+    chmod -R 755 $dist
 }
 
 extract_xcalbuild() {

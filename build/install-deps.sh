@@ -32,7 +32,7 @@ if [ ! -f "/usr/local/musl/bin/musl-gcc" ]; then
   echo "* musl is an implementation of the C standard library built on top of the Linux system call API, including interfaces defined in the base language standard, POSIX, and widely agreed-upon extensions. musl is lightweight, fast, simple, free, and strives to be correct in the sense of standards-conformance and safety."
   echo "unzip musl"
   tar -xzvf $MUSL_PATH
-  cd "./musl-1.2.2" && ./configure && make && sudo make install && cd -
+  cd "./musl-1.2.2" && ./configure && make && make install && cd -
 else
   echo "\n...musl-libc has been installed, skip musl-1.2.2 installation\n"
 fi

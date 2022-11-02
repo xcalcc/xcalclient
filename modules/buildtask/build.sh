@@ -34,7 +34,11 @@ else
     mv ./tmp/buildtask ./dist/buildtask
 fi
 
+echo "Changing dist folder permissions"
+chmod -R 755 ./dist
+
 echo "......Delete buildTask tmp folder......"
 rm -rf ./tmp
 rm -rf ./build
+rm -rf ./__pycache__
 echo "......Generate static buildTask Package Finished......"

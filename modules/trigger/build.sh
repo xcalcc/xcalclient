@@ -29,6 +29,11 @@ else
     mv ./tmp/xcal-trigger ./dist/xcal-trigger
 fi
 
+echo "Changing dist folder permissions"
+chmod -R 755 ./dist
+
 echo "......clean up......"
+rm -rf ./tmp
 rm -rf ./build
+rm -rf ./__pycache__
 echo "......Generate static xcal-trigger Package Finished......"
