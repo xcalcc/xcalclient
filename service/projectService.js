@@ -243,11 +243,11 @@ module.exports = {
         const serverUrl = `${apiServer}${resourcePath}`;
 
         let callback = {};
-        logger.debug(`[GET] ${serverUrl}?projectUuid=${projectUuid}`, logMeta);
+        logger.debug(`[GET] ${serverUrl}?id=${projectUuid}`, logMeta);
         try {
             callback = await axios.get(serverUrl, {
                     params: {
-                        projectUuid,
+                        id: projectUuid,
                     },
                     headers: {
                         'X-B3-TraceId': correlationId,

@@ -106,25 +106,37 @@ copy_files_from_build_results() {
     echo "Copying subphases scm..."
     file $PYTHON_MODULE_PATH/scm/dist/scm
     cp -f $PYTHON_MODULE_PATH/scm/dist/scm $dist/executable/scmSubPhase
+    # clean
+    rm -rf $PYTHON_MODULE_PATH/scm/dist
 
     echo "Copying subphases packager..."
     file $PYTHON_MODULE_PATH/packager/dist/packager
     cp -f $PYTHON_MODULE_PATH/packager/dist/packager $dist/executable/packager
+    # clean
+    rm -rf $PYTHON_MODULE_PATH/packager/dist
 
     echo "Copying subphases buildtask..."
     file $PYTHON_MODULE_PATH/buildtask/dist/buildtask
     cp -f $PYTHON_MODULE_PATH/buildtask/dist/buildtask $dist/executable/buildtask
+    # clean
+    rm -rf $PYTHON_MODULE_PATH/buildtask/dist
 
     echo "Copying subphases uploadFile..."
     file $PYTHON_MODULE_PATH/uploadFile/dist/uploadfile
     cp -f $PYTHON_MODULE_PATH/uploadFile/dist/uploadfile $dist/executable/uploadfile
+    # clean
+    rm -rf $PYTHON_MODULE_PATH/uploadFile/dist
 
     echo "Copying xcal-trigger to tools..."
     mkdir -p $dist/tools
     cp $PYTHON_MODULE_PATH/trigger/dist/xcal-trigger $dist/tools/xcal-trigger
+    # clean
+    rm -rf $PYTHON_MODULE_PATH/trigger/dist
 
     echo "Copying tools gather-logs..."
     cp -f $PYTHON_MODULE_PATH/gatherLogs/dist/gather-logs $dist/tools/gather-logs
+    # clean
+    rm -rf $PYTHON_MODULE_PATH/gatherLogs/dist
 
     echo "Changing permissions"
     chmod -R 755 $dist

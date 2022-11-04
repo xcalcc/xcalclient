@@ -39,6 +39,7 @@ chmod -R 755 ./dist
 #pyinstaller -F spGetScmDiff.py --distpath ./tmp --hidden-import=psutil --hidden-import=cffi -s -p ../common && staticx ./tmp/spGetScmDiff ./dist/spGetScmDiff --strip
 #pyinstaller -F spGetSourceCode.py --distpath ./tmp --hidden-import=psutil --hidden-import=cffi -s -p ../common && staticx ./tmp/spGetSourceCode ./dist/spGetSourceCode --strip
 echo "......Delete scm Spec File......"
+rm ./*.spec
 rm -rf ./tmp
 rm -rf ./build
 rm -rf ./__pycache__

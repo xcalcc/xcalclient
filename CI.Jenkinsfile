@@ -60,6 +60,7 @@ pipeline {
                     echo ${INFO} "Start to build XcalClient for ${PLATFORM}..."
                     # use docker to build based on ubuntu 18.04, new docker image xcalclientbuilder will do the build task
                     # no branch should be specified in building, which is prerequisite before build during source code preparation
+                    set +e
                     chmod +x -R $(pwd)/modules/
                     mkdir -p build/dist/executable
                     mkdir -p build/dist/tools
@@ -68,6 +69,7 @@ pipeline {
                     # docker context use $USER
                     docker run --rm -e TARGET=${PLATFORM} -v $(pwd):/home -w /home $XCALCLIENT_BUILD_DOCKER_IMG sh -c "yarn && yarn build ${PLATFORM} ${NO_INSTALL}"
                     # chown -R $USER: build/dist
+                    set -e
 
                     #yarn
                     #yarn build
@@ -201,6 +203,7 @@ def notifyBuild(String buildStatus = 'STARTED') {
             subject: subject,
             body: details,
             attachLog: attachLogs,
+            mimeType: 'text/html',
             compressLog: true,
             from: 'Jenkins',
             to: notifyEmails

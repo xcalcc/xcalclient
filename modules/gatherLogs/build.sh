@@ -36,6 +36,7 @@ echo "Changing dist folder permissions"
 chmod -R 755 ./dist
 
 echo "......clean up......"
+rm ./*.spec
 rm -rf ./tmp
 rm -rf ./build
 rm -rf ./__pycache__

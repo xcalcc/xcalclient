@@ -7,7 +7,7 @@ module.exports = {
             C: 'commandLine',
         },
         MAX_SOURCE_FILE_SIZE: 5 * 1024 * 1024 * 1024, //in bytes 4 GB
-        MAX_BUFFER_FOR_SPAWN_SYNC: 500 * 1024 * 1024, //in bytes 500M
+        MAX_BUFFER_FOR_SPAWN_SYNC: 1024 * 1024, //in bytes 1M, limited by nodejs 14+
         DEFAULT_MAX_TASK_FOLDERS: 10, //default value for how many work folders keep locally for a particular project
         SCAN_MODE:  {
             SINGLE: '-single',

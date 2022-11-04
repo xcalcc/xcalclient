@@ -56,13 +56,18 @@ class Message {
      * @param locale
      * @return {{msg, code, key}|{msg: (*|string), code, key}}
      */
-    lookup(key, interpolation, locale = global.locale || 'en') {
-        // console.log(`[message] Looking up message object [${key}]`);
-        let msgObj = this._getMsgObj(key, interpolation, locale);
-        //todo enable msg after Sun's approval
-        delete msgObj.msg;
-        delete msgObj.key;
-        return msgObj;
+    lookup(key='E_COMMON_UNKNOWN_ERROR', interpolation, locale = global.locale || 'en') {
+        try {
+            // console.log(`[message] Looking up message object [${key}]`);
+            let msgObj = this._getMsgObj(key, interpolation, locale);
+            // todo enable msg after Sun's approval
+            delete msgObj.msg;
+            delete msgObj.key;
+            return msgObj;
+        } catch (e) {
+            console.error(e);
+            return key;
+        }
     }
 
     getKeys() {
